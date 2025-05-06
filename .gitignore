@@ -2,23 +2,29 @@
 .gradle/
 build/
 !gradle/wrapper/gradle-wrapper.jar
+*.lock
 
-# Java
-*.class
-*.log
-
-# IntelliJ
+# IntelliJ IDEA
 .idea/
 *.iml
 *.iws
 out/
 
-# OS files
-.DS_Store
-Thumbs.db
+# Java
+*.class
+*.jar
+*.war
+*.ear
 
 # Logs
 *.log
 
-# Environment
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment / secrets
 .env
+
+# Checksum caches
+**/checksums/
