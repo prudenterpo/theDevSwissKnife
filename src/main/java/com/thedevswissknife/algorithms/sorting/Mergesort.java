@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class MergesortSolver implements SortingSolver {
+public class Mergesort implements SortingSolver {
 
     @Override
     public boolean supports(String algorithmName) {
@@ -15,7 +15,7 @@ public class MergesortSolver implements SortingSolver {
     }
 
     @Override
-    public List<Integer> solve(List<Integer> input) {
+    public List<Integer> sort(List<Integer> input) {
         List<Integer> copy = new ArrayList<>(input);
         mergesort(copy, 0, copy.size() - 1);
         return copy;

@@ -1,14 +1,17 @@
 package com.thedevswissknife.algorithms.sorting;
 
 import com.thedevswissknife.algorithms.Algorithm;
+import com.thedevswissknife.utils.Util;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import static com.thedevswissknife.utils.Util.swap;
+
 @Component
-public class QuicksortSolver implements SortingSolver {
+public class Quicksort implements SortingSolver {
 
     @Override
     public boolean supports(String algorithmName) {
@@ -16,14 +19,13 @@ public class QuicksortSolver implements SortingSolver {
     }
 
     @Override
-    public List<Integer> solve(List<Integer> input) {
-        List<Integer> copy = new ArrayList<>(input);
-        quicksort(copy, 0, copy.size() - 1);
-
+    public int[] sort(int[] input) {
+        int[] copy = input.clone();
+        quicksort(copy, 0, copy.length - 1);
         return copy;
     }
 
-    private void quicksort(List<Integer> arr, int low, int high) {
+    private void quicksort(int[] arr, int low, int high) {
         if (low < high) {
             int pivotIndex = partition(arr, low, high);
             quicksort(arr, low, pivotIndex - 1);
@@ -31,17 +33,17 @@ public class QuicksortSolver implements SortingSolver {
         }
     }
 
-    private int partition(List<Integer> arr, int low, int high) {
-        int pivot = arr.get(high);
+    private int partition(int[] arr, int low, int high) {
+        int pivot = arr[high];
         int i = low - 1;
 
         for (int j = low; j < high; j++) {
-            if (arr.get(j) <= pivot) {
+            if (arr[j] <= pivot) {
                 i++;
-                Collections.swap(arr, i, j);
+                swap(arr, i, j);
             }
         }
-        Collections.swap(arr, i + 1, high);
+        swap(arr, i + 1, high);
         return i + 1;
     }
 }

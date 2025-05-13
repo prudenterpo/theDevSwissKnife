@@ -16,6 +16,6 @@ public class SortingService {
                 .filter(s -> s.supports(request.algorithm()))
                 .findFirst()
                 .orElseThrow(() -> new IllegalArgumentException("Unsupported algorithm: " + request.algorithm()))
-                .solve(request.input());
+                .sort(request.input());
     }
 }

@@ -1,7 +1,6 @@
 package com.thedevswissknife.algorithms;
 
 public enum Algorithm {
-    // Sorting
     QUICKSORT,
     MERGESORT,
     INSERTION_SORT,
@@ -12,40 +11,33 @@ public enum Algorithm {
     RADIX_SORT,
     SHELL_SORT,
 
-    // Searching
     BINARY_SEARCH,
     LINEAR_SEARCH,
 
-    // Graph
     BFS,
     DFS,
     DIJKSTRA,
     KRUSKAL,
     PRIM,
 
-    // Recursion / Backtracking
     FACTORIAL,
     FIBONACCI,
     N_QUEENS,
     SUDOKU_SOLVER,
 
-    // Dynamic Programming
     KNAPSACK,
     LONGEST_COMMON_SUBSEQUENCE,
     LONGEST_INCREASING_SUBSEQUENCE,
     COIN_CHANGE,
 
-    // Math
     GCD,
     SIEVE_OF_ERATOSTHENES,
     FAST_EXPONENTIATION,
 
-    // Strings
     KMP,
     RABIN_KARP,
     MANACHER,
 
-    // Others
     UNION_FIND,
     TOPOLOGICAL_SORT;
 
